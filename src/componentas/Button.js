@@ -1,13 +1,16 @@
-let index = 0
-function inc(){
-    console.log(index);
-    index += 1;
-}
+import { useState } from "react";
 
 const Button = () => {
+  // function inc() {setCounter(counter + 1);}
+  // function des() {setCounter(counter - 1);}
+  const [counter, setCounter] = useState(0);
   return (
-    <button onClick={inc}>press in Button</button>
-  )
-}
+    <div>
+      <button onClick={() => setCounter(counter + 1)}>+</button>
+      <button onClick={() => setCounter(counter - 1)}>-</button>
+      {counter}
+    </div>
+  );
+};
 
-export default Button
+export default Button;
